@@ -72,4 +72,5 @@ But for the current requirements, this approach provides the best balance of sim
 
 ### Other Notes
 
-I changed the default start and end time of the Timebar to be the full available range.
+- I used Node v20.9.0 for local development
+- I changed the default start and end time of the Timebar to be the full available range.
