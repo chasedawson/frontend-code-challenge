@@ -71,3 +71,5 @@ Since there are only two layers, I interpreted a clean URL as one that is human-
 But for the current requirements, this approach provides the best balance of simplicity and functionality.
 
 ### Other Notes
+
+I changed the default start and end time of the Timebar to be the full available range.
