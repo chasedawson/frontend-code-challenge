@@ -52,3 +52,22 @@ Open your browser and navigate to <http://localhost:5173/> to see the applicatio
 
 Have fun, and see you soon!
 
+## My Approach
+
+### State Management
+
+I implemented global state management using the `useContext` hook to track active layers, avoiding extra, potentially unnecessary dependencies. This implementation creates a custom hook and follows React best practices for optimizing re-renders through memoization of the context value.
+
+### URL Synchronization
+
+I added `react-router-dom` as a dependency and implemented URL synchronization using `react-router-dom`'s `useSearchParams` hook to maintain a clean, human-readable URL structure (e.g., `presence=true&satellite=false`) that serves as the source of truth for layer visibility state. This approach ensures state persistence across page refreshes.
+
+Since there are only two layers, I interpreted a clean URL as one that is human-readable and that clearly maps to the application state. To scale to more layers in the future, we could consider:
+
+- only showing layers with true values in the URL
+- encoding active layers as bit flags
+- query parameter grouping
+
+But for the current requirements, this approach provides the best balance of simplicity and functionality.
+
+### Other Notes

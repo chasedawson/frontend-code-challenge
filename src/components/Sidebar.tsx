@@ -1,23 +1,24 @@
-import { useState } from 'react';
-import { Logo, SwitchRow } from '@globalfishingwatch/ui-components';
-import styles from './Sidebar.module.css';
+import { Logo, SwitchRow } from "@globalfishingwatch/ui-components";
+import { useLayers } from "../contexts/LayersContext";
+import styles from "./Sidebar.module.css";
 
 function Sidebar() {
-  const [active, setActive] = useState(true);
+  const { presence, satellite, togglePresence, toggleSatellite } = useLayers();
+
   return (
     <div className={styles.sidebar}>
       <Logo className={styles.logo} />
       <div className={styles.content}>
         <SwitchRow
-          active={active}
-          onClick={() => setActive(!active)}
+          active={presence}
+          onClick={togglePresence}
           tooltip="Toggle layer visibility"
           tooltipPlacement="top"
           label="Presence"
         />
         <SwitchRow
-          active={false}
-          onClick={() => console.log('TODO')}
+          active={satellite}
+          onClick={toggleSatellite}
           tooltip="Toggle layer visibility"
           tooltipPlacement="top"
           label="Satellite"
